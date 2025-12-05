@@ -7,8 +7,14 @@ int main()
 {
     std::cout << "Hello World!\n";
 
-    std::cout << "Hello World!\n";
-    //boom
+ 
+    
+    
+	//is this where i can put the fight system code, or seperate class?
+	//normally in program you can add info from classes and such here right? 
+
+
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

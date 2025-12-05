@@ -1,8 +1,10 @@
 #pragma once
 class test
 {
-	public:
-	test();
-	~test();
+	//public:
+	/*test();*/ //constuctor
+	/*~test();*/ //destructor? 
+
+	
 };
 

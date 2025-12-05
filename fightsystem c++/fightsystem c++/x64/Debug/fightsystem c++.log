@@ -1,0 +1,26 @@
+﻿  abilities.cpp
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\abilities.cpp(3,7): error C2011: 'abilities': 'class' type redefinition
+      C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\abilities.h(3,7):
+      see declaration of 'abilities'
+  
+  Enemy.cpp
+  fightsystem c++.cpp
+  Player.cpp
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\abilities.cpp(3,7): error C2011: 'abilities': 'class' type redefinition
+  (compiling source file 'Player.cpp')
+      C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\abilities.h(3,7):
+      see declaration of 'abilities'
+  
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\Player.h(5,16): error C2504: 'abilities': base class undefined
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\Player.h(13,7): error C2182: 'playerStats': this use of 'void' is not valid
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\Player.cpp(4,7): error C2011: 'Player': 'class' type redefinition
+      C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\Player.h(5,7):
+      see declaration of 'Player'
+  
+  test.cpp
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\test.cpp(3,7): error C2600: 'test::test': cannot define a compiler-generated special member function (must be declared in the class first)
+  Generating Code...
