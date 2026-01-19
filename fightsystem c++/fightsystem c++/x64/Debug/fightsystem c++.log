@@ -1,10 +1,12 @@
 ﻿  abilities.cpp
+  fightsystem c++.cpp
 C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\abilities.cpp(3,7): error C2011: 'abilities': 'class' type redefinition
       C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\abilities.h(3,7):
       see declaration of 'abilities'
   
-  Enemy.cpp
-  fightsystem c++.cpp
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\fightsystem c++.cpp(57,12): warning C4101: 'playerAbilities': unreferenced local variable
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\fightsystem c++.cpp(56,8): warning C4930: 'enemy dragon(void)': prototyped function not called (was a variable definition intended?)
+C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\fightsystem c++.cpp(58,12): warning C4101: 'enemyAbilities': unreferenced local variable
   Player.cpp
 C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\abilities.cpp(3,7): error C2011: 'abilities': 'class' type redefinition
   (compiling source file 'Player.cpp')
@@ -12,9 +14,6 @@ C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\abili
       see declaration of 'abilities'
   
 C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\Player.h(5,16): error C2504: 'abilities': base class undefined
-  (compiling source file 'Player.cpp')
-  
-C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\Player.h(13,7): error C2182: 'playerStats': this use of 'void' is not valid
   (compiling source file 'Player.cpp')
   
 C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\fightsystem c++\Player.cpp(4,7): error C2011: 'Player': 'class' type redefinition
