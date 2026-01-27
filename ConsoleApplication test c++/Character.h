@@ -17,8 +17,10 @@ public:
 	int getHp() const;
 	int getStamina() const;
 
-	void reduceStamina(int amount);
-	void recoverStamina(int amount);
+	/*void reduceStamina(int amount);
+	void recoverStamina(int amount);*/
+	virtual void resetHealth(int health);
+	virtual void resetStamina(int stam);
 };
 #endif // CHARACTER_H
 

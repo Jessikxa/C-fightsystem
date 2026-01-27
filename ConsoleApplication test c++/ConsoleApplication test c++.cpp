@@ -28,9 +28,9 @@ int main() {
 	player->addAttack(new Attack("kick", 10, 5));
 
 		do {
-			std::cout << "\n---MENU---" << std::endl;
+			std::cout << "\n---MENU---" << std::endl; //menu
 			std::cout << "1. Fight" << std::endl;
-			std::cout << "2. Potions" << std::endl;
+			std::cout << "2. Rest" << std::endl;
 			std::cout << "3. Exit" << std::endl;
 			std::cout << "Enter your choice: ";
 
@@ -38,19 +38,18 @@ int main() {
 			std::getline(std::cin, input);
 			std::stringstream ss(input);
 
-			if (!(ss >> choice) || !(ss.eof())) {
-				//std::cin.clear();
-				//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			if (!(ss >> choice) || !(ss.eof())) { //if input is not a number or if try to put string after int >:(
 				std::cout << "Invalid input\n";
 				continue;
 			}
-			//std::cin >> choice; //get user input for menu choice
+			
 
 			switch (choice) {
 
 			case 1://fight
 				std::cout << "You chose to fight!" << std::endl;
-				// Call fight function here  (basically the int main function)
+
+				enemy->resetHealth(100);  //create new enemy for each fight
 
 				while (player->isAlive() && enemy->isAlive()) {
 					std::cout << "\nPlayer HP: " << player->getHp() << ", Stamina: " << player->getStamina() << "\n";
@@ -60,17 +59,15 @@ int main() {
 					player->showAttacks();
 					Attack* attack = nullptr;
 
-					while (attack == nullptr) {
-						attack = player->chooseAttack();
-
-						//added error for invalid choice. doesnt print only when wrong input also when damage or stamina is 0 -> try fix
+					while (attack == nullptr) { 
+						attack = player->chooseAttack(); //get the chosen attack
 					}
 
 					std::cout << "\nYou used " << attack->getName() << "!\n";
-					enemy->takeDamage(attack->getDamageCost());
+					enemy->takeDamage(attack->getDamageCost()); // enemy takes attack damage
 					std::cout << "Enemy took " << attack->getDamageCost() << " damage!\n";
 
-					if (!enemy->isAlive()) {
+					if (!enemy->isAlive()) { //win
 						std::cout << "You defeated the beast! You win!\n";
 						break;
 					}
@@ -79,12 +76,12 @@ int main() {
 					std::cout << "The beast attacks you for " << enemyDamage << " damage!\n";
 					player->takeDamage(enemyDamage);
 
-					if (!player->isAlive()) {
+					if (!player->isAlive()) { //lose
 						std::cout << "You have been defeated by the beast! Game over.\n"; // or maybe the beast has defeated you
 						break;
 					}
 
-					else if (!player->getStamina()) {
+					else if (player->getStamina() <=0) { //out of stamina
 						std::cout << "You are out of stamina!\n The enemy one hit you after";
 						break;
 					}
@@ -92,8 +89,10 @@ int main() {
 				}
 				break;
 
-			case 2:
-				std::cout << "You chose potions!" << std::endl;
+			case 2://rest player
+				player->resetHealth(100);
+				player->resetStamina(50);
+				std::cout << "Player has been rested to full health and stamina.\n";
 				break;
 
 			case 3://exit game
@@ -107,76 +106,4 @@ int main() {
 		} while (choice != 3);
 		return 0;
 
-
-
-
-	//srand(static_cast<unsigned int>(time(nullptr)));
-
-	//Player* player = new Player();
-	//Enemy* enemy = new Enemy();
-
-
-	//player->addAttack(new Attack("Slash", 15, 5));
-	//player->addAttack(new Attack("Heavy Strike", 25, 20));
-	//player->addAttack(new Attack("kick", 10, 5));
-	//player->addAttack(new Attack("Quit", 0, 0));
-
-	//std::cout << "Welcome to the battle of the centuryy!\n";
-
-	//while (player->isAlive() && enemy->isAlive()) {
-	//	std::cout << "\nPlayer HP: " << player->getHp() << ", Stamina: " << player->getStamina() << "\n";
-	//	std::cout << "Enemy HP: " << enemy->getHp() << "\n";
-
-
-	//	player->showAttacks();
-	//	Attack* attack = nullptr;
-
-	//	while (attack == nullptr) {
-	//		attack = player->chooseAttack();
-
-	//		//added error for invalid choice. doesnt print only when wrong input also when damage or stamina is 0 -> try fix
-	//	}
-
-	//	std::cout << "\nYou used " << attack->getName() << "!\n";
-	//	enemy->takeDamage(attack->getDamageCost());
-	//	std::cout << "Enemy took " << attack->getDamageCost() << " damage!\n";
-
-	//	if (!enemy->isAlive()) {
-	//		std::cout << "You defeated the beast! You win!\n";
-	//		break;
-	//	}
-
-	//	int enemyDamage = 10 + rand() % 11; // Enemy attacks with random damage between 10 and 20
-	//	std::cout << "The beast attacks you for " << enemyDamage << " damage!\n";
-	//	player->takeDamage(enemyDamage);
-
-	//	if (!player->isAlive()) {
-	//		std::cout << "You have been defeated by the beast! Game over.\n"; // or maybe the beast has defeated you
-	//		break;
-	//	}
-
-	//	else if(!player->getStamina()){
-	//		std::cout << "You are out of stamina!\n The enemy one hit you after";
-	//		break;
-	//	}
-
-	//	/*if(player->addAttack(attack) == "Quit") {
-	//		std::cout << "You have quit the game. Goodbye!\n";
-	//		break;
-	//	}*/
-	//	//if (attack == nullptr) {
-	//	//	std::cout << "wrong input. please choose again";
-	//	//	//break;
-	//	//}
-	//	
-	//	//else {
-	//	//	player->recoverStamina(10); // Recover some stamina each turn
-	//	//	std::cout << "You recover 10 stamina.\n";
-	//	//}
-
-	//	/*else {
-	//		std::cout << "invalid input?\n";
-	//		
-	//	}*/
-	//}
 }

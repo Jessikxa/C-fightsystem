@@ -1,2 +1,6 @@
-﻿  ConsoleApplication test c++.cpp
+﻿  Character.cpp
+  ConsoleApplication test c++.cpp
+  Enemy.cpp
+  Player.cpp
+  Generating Code...
   ConsoleApplication test c++.vcxproj -> C:\Users\Jessi\OneDrive\Documents\school\c++\C-fightsystem\ConsoleApplication test c++\x64\Debug\ConsoleApplication test c++.exe

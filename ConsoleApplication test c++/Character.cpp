@@ -20,7 +20,10 @@ int Character::getStamina() const{
 	return stamina;
 }
 
-void Character::recoverStamina(int amount){
-	stamina -= amount;
-	if (stamina < 0) stamina = 0;
-}
+void Character::resetHealth(int health) { hp = health; if (hp < 0) hp = 0; }
+void Character::resetStamina(int stam) { stamina = stam; if (stamina < 0) stamina = 0; }
+
+//void Character::recoverStamina(int amount){
+//	stamina -= amount;
+//	if (stamina < 0) stamina = 0;
+//}

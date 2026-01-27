@@ -8,8 +8,16 @@ class Enemy : public Character
 public:
     Enemy();
 
-    bool block() const;
-    bool counter() const; 
+   // void Reset(int health);
+
+    /*bool block() const;
+    bool counter() const;*/ 
+
+   /* virtual int getHp() const;
+    virtual int getStamina() const;*/
+    // void reset(int health);
 };
+
+
 
 #endif

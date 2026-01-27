@@ -35,24 +35,20 @@ Attack* Player::chooseAttack() {
 
     while (true) {
         std::cout << "\nChoose your attack: \n";
-        //std::cin >> choice;
-        //std::string line;
+       
 
 		std::getline(std::cin, line); //get the rest of the line after int input
 		std::stringstream ss(line); 
 
-        //error message if input is not a number
+        
 
 		if (!(ss >> choice) || !(ss.eof())) { //if input is not a number or if try to put string after int >:)
-
-			//std::cin.clear(); //clear the error so it doesnt loop infinitely
-            //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
             std::cout << "invalid input. Please fill in a number \n";
             continue;
         }
 
-        //error message if number not in range / array
+        
+
 		if (choice < 1 || choice > static_cast<int>(attacks.size())) {  //if choice is out of range
             std::cout << "Invalid number. Please fill in a valid number\n";
             continue;
@@ -68,11 +64,6 @@ Attack* Player::chooseAttack() {
     }
 
 Attack* atk = attacks[choice - 1];
-	//if (atk->getStaminaCost() > stamina) { //required stamina is more than current stamina
- //       std::cout << "Not enough stamina!\n";
- //       return nullptr;
- //   }
- //   stamina -= atk->getStaminaCost(); //reduce stamina amount on screen
- //   
+ 
 }
 
